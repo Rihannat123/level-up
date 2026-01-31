@@ -1,54 +1,127 @@
-import tkinter as tk
-from tkinter import filedialog
+import matplotlib
+import matplotlib.pyplot as plt
 
-# create main window
-window = tk.Tk()
-window.title("Let's Build a Text Editor")
-window.geometry("700x500")
+import matplotlib.pyplot as plt
+import numpy as np
 
-# create text area
-text_area = tk.Text(window, font=("Arial", 12))
-text_area.pack(expand=True, fill="both")
+xpoints = np.array([0, 6])
+ypoints = np.array([0, 250])
 
-# ---------------- FUNCTIONS ----------------
+plt.plot(xpoints, ypoints)
+plt.show()
+import matplotlib.pyplot as plt
+import numpy as np
 
-# clear text
-def clear_text():
-    text_area.delete(1.0, tk.END)
+xpoints = np.array([1, 8])
+ypoints = np.array([3, 10])
 
-# open file
-def open_file():
-    file = filedialog.askopenfilename(
-        filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")]
-    )
-    if file:
-        text_area.delete(1.0, tk.END)
-        with open(file, "r") as f:
-            text_area.insert(tk.END, f.read())
+plt.plot(xpoints, ypoints)
+plt.show()
+import matplotlib.pyplot as plt
+import numpy as np
 
-# save file
-def save_file():
-    file = filedialog.asksaveasfilename(
-        defaultextension=".txt",
-        filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")]
-    )
-    if file:
-        with open(file, "w") as f:
-            f.write(text_area.get(1.0, tk.END))
+xpoints = np.array([1, 2, 6, 8])
+ypoints = np.array([3, 8, 1, 10])
 
-# ---------------- MENU BAR ----------------
+plt.plot(xpoints, ypoints)
+plt.show()
+import matplotlib.pyplot as plt
+import numpy as np
 
-menu_bar = tk.Menu(window)
-window.config(menu=menu_bar)
+ypoints = np.array([3, 8, 1, 10])
 
-file_menu = tk.Menu(menu_bar, tearoff=0)
-menu_bar.add_cascade(label="File", menu=file_menu)
+plt.plot(ypoints, marker='o')
+plt.show()
+import matplotlib.pyplot as plt
+import numpy as np
 
-file_menu.add_command(label="Open", command=open_file)
-file_menu.add_command(label="Save", command=save_file)
-file_menu.add_command(label="Clear", command=clear_text)
-file_menu.add_separator()
-file_menu.add_command(label="Exit", command=window.quit)
+ypoints = np.array([3, 8, 1, 10])
 
-# run program
-window.mainloop()
+plt.plot(ypoints, marker='o', ms=20)
+plt.show()
+import matplotlib.pyplot as plt
+import numpy as np
+
+ypoints = np.array([3, 8, 1, 10])
+
+plt.plot(ypoints, marker='o', ms=20, mec='r')
+plt.show()
+import matplotlib.pyplot as plt
+import numpy as np
+
+ypoints = np.array([3, 8, 1, 10])
+
+plt.plot(ypoints, linestyle='dotted')
+plt.show()
+plt.plot(ypoints, linestyle='dashed')
+import matplotlib.pyplot as plt
+import numpy as np
+
+ypoints = np.array([3, 8, 1, 10])
+
+plt.plot(ypoints, color='r')
+plt.show()
+import matplotlib.pyplot as plt
+import numpy as np
+
+ypoints = np.array([3, 8, 1, 10])
+
+plt.plot(ypoints, linewidth='20.5')
+plt.show()
+import matplotlib.pyplot as plt
+import numpy as np
+
+y1 = np.array([3, 8, 1, 10])
+y2 = np.array([6, 2, 7, 11])
+
+plt.plot(y1)
+plt.plot(y2)
+
+plt.show()
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.array([80, 85, 90, 95, 100, 105, 110, 115, 120, 125])
+y = np.array([240, 250, 260, 270, 280, 290, 300, 310, 320, 330])
+
+plt.plot(x, y)
+
+plt.xlabel("Average Pulse")
+plt.ylabel("Calorie Burnage")
+
+plt.show()
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.array([80, 85, 90, 95, 100, 105, 110, 115, 120, 125])
+y = np.array([240, 250, 260, 270, 280, 290, 300, 310, 320, 330])
+
+plt.plot(x, y)
+
+plt.title("Sports Watch Data")
+plt.xlabel("Average Pulse")
+plt.ylabel("Calorie Burnage")
+
+plt.show()
+import matplotlib.pyplot as plt
+
+plt.plot(xAxis, yAxis)
+
+plt.title('title name')
+plt.xlabel('xAxis name')
+plt.ylabel('yAxis name')
+
+plt.show()
+import matplotlib.pyplot as plt
+
+xAxis = [i + 0.5 for i, _ in enumerate(xAxis)]
+
+plt.bar(xAxis, yAxis)
+
+plt.title('title name')
+plt.xlabel('xAxis name')
+plt.ylabel('yAxis name')
+
+plt.xticks([i + 0.5 for i, _ in enumerate(xAxis)], xAxis)
+
+plt.show()
